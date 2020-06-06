@@ -17,8 +17,11 @@ NB: _These notes are rough!_
 ### Requirements
 
 I run this with the following:
+
 Node 8.16.x
+
 npm 6.14.x
+
 Postgres 10.x
 
 Note:
@@ -27,9 +30,12 @@ details in your .env before running the db:create command
 
 Since this relies on a range of existing technologies, if you run into issues,
 look at their documentation.
-[Postgres](https://www.postgresql.org/docs/10)
-[Sequelize](https://sequelize.org/v5/)
-[Express](https://expressjs.com/en/4x/api.html)
+
+- [Postgres](https://www.postgresql.org/docs/10)
+
+- [Sequelize](https://sequelize.org/v5/)
+
+- [Express](https://expressjs.com/en/4x/api.html)
 
 ### Quick start
 
