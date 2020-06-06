@@ -1,0 +1,20 @@
+/* Very simple nav bar */
+
+ul > li {
+  display: inline-block;
+  margin: 0 1em 0 1em;
+}
+
+/* Very simple forms */
+
+form > * {
+  display: block;
+}
+
+form {
+  margin: 1em;
+}
+
+form > button {
+  margin: 1em 0;
+}
