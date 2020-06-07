@@ -121,7 +121,7 @@ Database has been created and is available
 Created postgresql-opaque-15460 as DATABASE_URL
 ```
 
-If your database url has been saved as something other than DATABASE_URL, such as HEROKU_POSTGRESQL_BRONZE_URL, you should change the `use_env_variable` for production environments value accordingly in the `config/config.js`.
+If your database url has been saved as something other than DATABASE_URL, such as HEROKU_POSTGRESQL_BRONZE_URL, you should change the `use_env_variable` value for production environments accordingly in the `config/config.js`.
 
 6. Set a new config variable to store the JWT_SECRET, either via the Heroku dashboard for your app or the toolbelt command. See the [config variables docs](https://devcenter.heroku.com/articles/config-vars) for this.
 
