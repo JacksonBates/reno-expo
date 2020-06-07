@@ -1,3 +1,4 @@
+const path = require("path");
 const verifySignUp = require("./verifySignUp");
 const authJwt = require("./verifyJwtToken");
 
@@ -13,4 +14,8 @@ module.exports = function (app) {
   app.post("/api/auth/signin", controller.signin);
 
   app.get("/api/test/user", [authJwt.verifyToken], controller.userContent);
+
+  app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname + "/client/build/index.html"));
+  });
 };
