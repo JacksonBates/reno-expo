@@ -16,7 +16,7 @@ export default function Register() {
       body: JSON.stringify({ username, password }),
     };
 
-    return fetch("http://localhost:8080/api/auth/signup", config)
+    return fetch("/api/auth/signup", config)
       .then((response) => {
         return response.json();
       })

@@ -22,7 +22,7 @@ export default function Login(props) {
       body: JSON.stringify({ username, password }),
     };
 
-    return fetch("http://localhost:8080/api/auth/signin", config)
+    return fetch("/api/auth/signin", config)
       .then((response) => {
         return response.json();
       })
