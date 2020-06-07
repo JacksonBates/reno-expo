@@ -19,6 +19,7 @@ module.exports = {
     port: "5432",
   },
   production: {
+    use_env_variable: "DATABASE_URL",
     username: process.env.PRODUCTION_DATABASE_USERNAME,
     password: process.env.PRODUCTION_DATABASE_PASSWORD,
     database: process.env.PRODUCTION_DATABASE,
