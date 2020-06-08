@@ -4,7 +4,7 @@ export function API({ endpoint = "", method = "GET", data = {} }, authTokens) {
     headers: {
       Accept: "application/json",
       "Content-Type": "application/json",
-      "x-access-token": authTokens,
+      Authorization: `Bearer ${authTokens}`,
     },
   };
   return fetch(endpoint, config)
@@ -12,4 +12,42 @@ export function API({ endpoint = "", method = "GET", data = {} }, authTokens) {
       return response.json();
     })
     .catch((error) => console.log(error));
+}
+
+export function login({ username = "", password = "" }) {
+  const config = {
+    method: "POST",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ username, password }),
+  };
+
+  return fetch("/api/auth/signin", config)
+    .then((response) => {
+      return response.json();
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+}
+
+export function register({ username = "", password = "" }) {
+  const config = {
+    method: "POST",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ username, password }),
+  };
+
+  return fetch("/api/auth/signup", config)
+    .then((response) => {
+      return response.json();
+    })
+    .catch((error) => {
+      console.error(error);
+    });
 }

@@ -2,7 +2,7 @@ require("dotenv").config();
 const jwt = require("jsonwebtoken");
 
 verifyToken = (req, res, next) => {
-  let token = req.headers["x-access-token"];
+  let token = req.headers.authorization.split(" ")[1];
 
   if (!token) {
     return res.status(403).send({

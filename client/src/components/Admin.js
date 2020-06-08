@@ -11,7 +11,7 @@ export default function Admin() {
     API({ endpoint: "/api/test/user" }, authTokens).then((response) =>
       setData(response)
     );
-  }, [data]);
+  }, [data, authTokens]);
 
   return (
     <React.Fragment>

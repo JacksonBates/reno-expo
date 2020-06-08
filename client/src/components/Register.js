@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { register } from "../helpers/api";
 
 export default function Register() {
   const [username, setUsername] = useState("");
@@ -7,29 +8,13 @@ export default function Register() {
 
   const postRegistration = (e) => {
     e.preventDefault();
-    const config = {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ username, password }),
-    };
-
-    return fetch("/api/auth/signup", config)
-      .then((response) => {
-        return response.json();
-      })
-      .then((response) => {
-        if (response.status === 200) {
-          console.log(response.message);
-        } else if (response.status >= 400) {
-          console.error(response.message);
-        }
-      })
-      .catch((error) => {
-        console.error(error);
-      });
+    register({ username, password }).then((response) => {
+      if (response.status === 200) {
+        console.log(response.message);
+      } else if (response.status >= 400) {
+        console.error(response.message);
+      }
+    });
   };
 
   return (

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, Redirect, useHistory } from "react-router-dom";
 import { useAuth } from "../context/auth";
+import { login } from "../helpers/api";
 
 export default function Login(props) {
   const history = useHistory();
@@ -13,19 +14,7 @@ export default function Login(props) {
 
   const postLogin = (e) => {
     e.preventDefault();
-    const config = {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ username, password }),
-    };
-
-    return fetch("/api/auth/signin", config)
-      .then((response) => {
-        return response.json();
-      })
+    login({ username, password })
       .then((response) => {
         if (response.accessToken) {
           setAuthTokens(response.accessToken);
