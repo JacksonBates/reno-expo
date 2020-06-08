@@ -85,6 +85,8 @@ made on your behalf.
 
 ### Development considerations
 
+#### Backend - Migrations
+
 Changes to the database should be handled through
 [migrations](https://sequelize.org/v5/manual/migrations.html).
 
@@ -95,6 +97,20 @@ The cli command for new migrations is:
 This will create the new model and database migration. Read the docs for more details.
 
 For migrations to take effect, you need to run the migrations: `npx sequelize-cli db:migrate`
+
+#### Client - API calls
+
+API calls are demonstrated in the `Login.js`, `Register.js`, and `Admin.js` components. Three helper functions are provided in `src/helpers/api/` that can be used throughout the React app. They are demonstrated in `useEffect` hooks. The `API` helper function provides a lightweight wrapper around `fetch` and takes two arguments: an object containing `{endpoint, method, data}`, and the `authTokens`. Since it returns the fetch response, it is thenable, i.e. you can call the api and set the state like this at its most simple:
+
+```js
+useEffect(() => {
+  // Note method and data have default values,
+  // so empty GET requests only require an endpoint
+  const endpoint = "/api/test/user";
+
+  API({ endpoint }, authTokens).then((response) => setData(response));
+}, [data, authTokens]);
+```
 
 ## Deployment
 
