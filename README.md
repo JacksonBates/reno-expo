@@ -175,6 +175,6 @@ Now the app should be functional enough to allow you to register a user and logi
 
 The basic version can be found at http://renoexpo.herokuapp.com
 
-A more developed app built using Reno Expo will be online soon.
+A more developed version, which uses Ant Design for styling and includes some example database migrations can be found here: [Reno Expo Books](https://reno-expo-books.herokuapp.com/). The Github repo is here: [Reno Expo Books Repo](https://github.com/JacksonBates/reno-expo-books).
 
 If you use Reno Expo to kick off a project, I would love to hear about it.
