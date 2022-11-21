@@ -15,7 +15,7 @@
   "license": "MIT",
   "devDependencies": {
     "concurrently": "^5.2.0",
-    "nodemon": "^2.0.4",
+    "nodemon": "^2.0.20",
     "sequelize-cli": "^5.5.1"
   },
   "dependencies": {
